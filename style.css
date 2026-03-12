@@ -1,0 +1,993 @@
+/* ============================================================
+   RONI MARGOLIN — Portfolio Site
+   style.css
+   Rebuilt from Figma Dev Mode — March 2026
+   ============================================================ */
+
+/* === FONTS === */
+@font-face {
+  font-family: 'PodkovaR';
+  src: url('assets/fonts/Podkovar-Regular.ttf') format('truetype'),
+       url('assets/fonts/Podkovar-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === VARIABLES === */
+:root {
+  /* Light palette */
+  --light-bg:      #FAF9F7;
+  --light-surface: #F5F3EF;
+  --light-border:  #E2DEDA;
+  --light-stone:   #9A9690;
+  --light-soft:    #3A3A3A;
+  --light-ink:     #1A1A1A;
+
+  /* Dark palette */
+  --dark-bg:       #141414;
+  --dark-surface:  #1E1E1E;
+  --dark-stone:    #6B6B6B;
+  --dark-soft:     #C8C4BE;
+  --dark-ink:      #F5F3EF;
+
+  /* Fonts */
+  --font-logo: 'PodkovaR', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Layout */
+  --max-width:  1100px;
+  --nav-height: 64px;
+}
+
+/* === RESET === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--light-bg);
+  color: var(--light-ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+/* === CONTAINER === */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 60px);
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background: var(--light-bg);
+  display: flex;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+.nav.is-scrolled {
+  box-shadow: 0 1px 0 var(--light-border);
+}
+.nav .container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__wordmark img {
+  display: block;
+  height: 16px;
+  width: auto;
+}
+.nav__links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav__links a {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 160%;
+  letter-spacing: 0.03em;
+  color: var(--light-stone);
+  transition: color 0.25s ease;
+}
+.nav__links a:hover { color: var(--light-ink); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  background: var(--dark-surface); /* #1E1E1E */
+  padding-top: calc(var(--nav-height) + clamp(60px, 9vw, 132px));
+  padding-bottom: clamp(60px, 7vw, 100px);
+}
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 90px;
+}
+
+/* Name block: SVG wordmark (roni stone / margolin near-white) */
+.hero__name {
+  margin: 0;
+  line-height: 0;
+}
+.hero__name img {
+  display: block;
+  width: clamp(200px, 28vw, 323px);
+  height: auto;
+}
+
+/* Sub-content: role + divider + intro */
+.hero__sub {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+}
+
+.hero__role {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 160%;
+  letter-spacing: 0.03em;
+  color: var(--dark-soft); /* #C8C4BE */
+  text-transform: uppercase;
+}
+
+.hero__divider {
+  width: 40px;
+  height: 1px;
+  background: var(--dark-ink); /* #F5F3EF */
+  flex-shrink: 0;
+}
+
+.hero__intro {
+  font-family: var(--font-body);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 300;
+  line-height: 62px;
+  letter-spacing: 0.03em;
+  color: var(--dark-soft); /* #C8C4BE */
+}
+/* "people" — slightly brighter for emphasis */
+.hero__intro strong {
+  color: var(--dark-ink);
+  font-weight: 300;
+}
+
+/* ============================================================
+   WORK SECTION
+   ============================================================ */
+.work {
+  background: var(--light-bg);
+  padding: 105px 0 80px; /* ~105px gap after hero matches Figma */
+}
+.work .container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Section label — used across light sections */
+.section-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 17px;
+  color: var(--light-stone);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* CS list */
+.cs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* gap comes from cards+dividers together */
+}
+.cs-list > li {
+  display: contents;
+}
+
+/* Card + divider pairing — dividers are 2px solid #FFFFFF between cards */
+.cs-list > li + li::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 0;
+  border-top: 2px solid #FFFFFF;
+}
+
+.cs-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 80px;
+  gap: 80px;
+  width: 100%;
+  min-height: 244px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.cs-item:hover {
+  background: rgba(255,255,255,0.5);
+}
+.cs-item:hover .cs-item__number {
+  color: var(--light-ink);
+  transition: color 0.4s ease;
+}
+
+.cs-item__number {
+  font-family: var(--font-body);
+  font-size: 86px;
+  font-weight: 100;
+  line-height: 140%;
+  color: var(--light-stone); /* #9A9690 at rest */
+  width: 160px;
+  flex-shrink: 0;
+  text-align: center;
+  transition: color 0.4s ease;
+}
+
+.cs-item__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  flex: 1;
+  min-height: 244px;
+}
+
+/* title + subtitle grouped with 10px gap */
+.cs-item__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cs-item__title {
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 250;
+  line-height: 31px;
+  color: var(--light-ink); /* #1A1A1A */
+}
+
+.cs-item__subtitle {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 250;
+  line-height: 18px;
+  color: var(--light-ink); /* #1A1A1A */
+}
+
+.cs-item__tags {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 16px 3px;
+  background: var(--light-border); /* #E2DEDA */
+  border-radius: 3px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  color: var(--light-soft); /* #3A3A3A */
+}
+
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
+.about {
+  background: var(--dark-bg); /* #141414 */
+  padding: clamp(60px, 8vw, 120px) 0;
+}
+.about .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.about .section-label {
+  color: var(--dark-soft); /* #C8C4BE — different from light section label */
+  flex-shrink: 0;
+  width: 150px;
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 680px;
+  flex: 0 0 680px;
+}
+.about__text p {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  color: var(--dark-ink); /* #F5F3EF */
+}
+
+/* ============================================================
+   LOGOS / EXPERIENCE STRIP
+   ============================================================ */
+.logos {
+  background: var(--light-surface); /* #F5F3EF */
+  padding: clamp(40px, 5vw, 80px) 0;
+}
+.logos .container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* EXPERIENCE label is 11px (not 13px like other labels) */
+.logos__label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+  color: var(--light-stone);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.logos__strip {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px; /* responsive fallback */
+}
+.logos__strip img {
+  height: auto;
+  max-height: 36px;
+  flex-shrink: 0;
+  opacity: 0.7;
+  filter: grayscale(100%);
+  transition: opacity 0.25s ease;
+}
+.logos__strip img:hover { opacity: 1; }
+.logos__strip img.logo--featured { max-height: 61px; }
+
+/* ============================================================
+   FOOTER / CONTACT
+   ============================================================ */
+.footer {
+  background: var(--dark-bg); /* #141414 */
+  padding: clamp(60px, 7vw, 100px) 0 40px;
+}
+
+/* Outer footer column: main content + bottom bar, gap 31px */
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+  padding-bottom: 0;
+}
+
+/* Main row: left (heading + sub) | right (links) */
+.footer__main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/* Left: heading group + sub text, gap 12px */
+.footer__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 520px;
+}
+
+/* Heading stacked: "Let's work" + "together." */
+.footer__heading-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer__heading-line1 {
+  font-family: var(--font-body);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 68px;
+  color: var(--dark-ink); /* #F5F3EF */
+  margin-bottom: -15px; /* Figma negative margin to remove leading gap */
+}
+.footer__heading-line2 {
+  font-family: var(--font-body);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 68px;
+  color: var(--dark-stone); /* #6B6B6B */
+}
+
+.footer__sub {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--dark-ink); /* #F5F3EF */
+  max-width: 520px;
+}
+
+/* Right: links column */
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+/* Each link item: label above link with 1px gap */
+.footer__link-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+}
+.footer__link-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13px;
+  color: var(--dark-soft); /* #C8C4BE */
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.footer__link {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--dark-ink); /* #F5F3EF */
+  transition: color 0.25s ease;
+}
+.footer__link:hover { color: var(--dark-soft); }
+
+/* Footer bottom bar */
+.footer__bottom {
+  margin-top: 90px;
+  padding: 20px 0;
+}
+.footer__bottom .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/* Left: "Designed with ♥" + "ronimargolin" wordmark */
+.footer__credit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+.footer__credit-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--dark-soft); /* #C8C4BE */
+}
+/* Heart icon: SVG has black stroke, filter converts to #F5F3EF on dark bg */
+.footer__heart {
+  display: inline-block;
+  vertical-align: middle;
+  filter: brightness(0) saturate(100%) invert(97%) sepia(3%) saturate(302%) hue-rotate(326deg) brightness(101%) contrast(93%);
+}
+.footer__credit-wordmark {
+  font-family: var(--font-logo);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--light-stone); /* #9A9690 */
+}
+.footer__copyright {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--dark-soft); /* #C8C4BE */
+  text-align: right;
+}
+
+/* ============================================================
+   CS SUBPAGE STYLES
+   ============================================================ */
+.cs-page { background: var(--light-bg); }
+
+/* CS Nav — override wordmark color for light page */
+.cs-page .nav { background: var(--light-bg); }
+
+/* CS Header — hero area with title row + metadata */
+.cs-header {
+  background: var(--light-surface);
+  padding-top: calc(var(--nav-height) + clamp(40px, 5vw, 70px));
+  padding-bottom: 24px;
+}
+.cs-header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 70px;
+}
+
+/* Metadata row — lives inside cs-header container (Figma: Frame 14188, gap: 70px) */
+.cs-header__meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+/* Title + number row */
+.cs-header__title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 50px;
+  width: 100%;
+}
+.cs-header__title {
+  font-family: var(--font-body);
+  font-size: clamp(32px, 5vw, 72px);
+  font-weight: 300;
+  line-height: 117%;
+  color: var(--light-ink); /* #1A1A1A */
+  flex: 1;
+  max-width: 890px;
+}
+.cs-header__number {
+  font-family: var(--font-body);
+  font-size: 86px;
+  font-weight: 100;
+  line-height: 110%;
+  leading-trim: both;
+  text-edge: cap;
+  color: var(--light-stone); /* #9A9690 */
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10px;
+}
+.metadata-item__label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--light-stone); /* #9A9690 */
+}
+.metadata-item__value {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 17px;
+  color: var(--light-soft); /* #3A3A3A */
+}
+
+/* Back link */
+.cs-back {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 160%;
+  letter-spacing: 0.03em;
+  color: var(--light-soft); /* #3A3A3A */
+  background: #FFFFFF;
+  transition: color 0.25s ease;
+}
+.cs-back .container {
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+.cs-back:hover { color: var(--light-ink); }
+
+/* CS Body */
+.cs-body {
+  background: #FFFFFF;
+  padding: 0 0 0;
+}
+.cs-body .container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-bottom: 100px;
+}
+
+/* Section + visual vertical rhythm with separators */
+.cs-section,
+.cs-visual {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+/* First block: standard section padding — spacing handled by .cs-back padding-bottom */
+.cs-body .container > *:first-child {
+  padding-top: 48px;
+}
+/* Separator line between consecutive blocks */
+.cs-section + .cs-section,
+.cs-section + .cs-visual,
+.cs-visual + .cs-section,
+.cs-visual + .cs-visual {
+  border-top: 1px solid var(--light-border);
+}
+
+/* Each section: label left | content right (two-column row) */
+/* padding-right: 60px matches Figma article padding — keeps content within 1040px */
+/* Applied here (not on container) so full-width separator lines still span 1100px */
+.cs-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding-right: 60px;
+}
+.cs-section-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 17px;
+  color: var(--light-stone); /* #9A9690 */
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  width: clamp(100px, 15%, 200px);
+  padding-top: 4px; /* optical alignment with first line of text */
+}
+/* Content column: all text + inline visuals */
+.cs-section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 680px;
+  flex: 1;
+}
+.cs-section__content p {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  color: var(--light-ink); /* #1A1A1A */
+}
+.cs-section__content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cs-section__content ul li {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  color: var(--light-ink); /* #1A1A1A */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+/* Dot stays anchored to first line regardless of text length */
+.cs-section__content ul li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--light-ink); /* #1A1A1A */
+  margin-top: 10px; /* (26px line-height − 5px dot) / 2 = centres on first line */
+}
+
+/* CS Visual — full width standalone (between sections, spans full container) */
+.cs-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* padding-top / padding-bottom handled by the rhythm rule above */
+}
+.cs-visual img {
+  width: 100%;
+  display: block;
+  border-radius: 2px;
+}
+
+/* CS Visual inline — sits inside a section content column at 680px */
+.cs-visual--inline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 0;
+  width: 100%;
+}
+.cs-visual--inline img {
+  width: 100%;
+  display: block;
+  border-radius: 2px;
+}
+
+p.cs-visual__caption {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 17px;
+  color: var(--light-soft); /* #3A3A3A */
+}
+
+/* CS Bottom nav — total height 100px */
+.cs-bottom-nav {
+  background: var(--light-surface); /* #F5F3EF */
+  position: relative;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+/* Center divider line */
+.cs-bottom-nav::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 60px;
+  background: var(--light-border); /* #E2DEDA */
+}
+/* Hide divider when only one link is present (first or last CS page) */
+.cs-bottom-nav:not(:has(.cs-nav-link--prev))::before,
+.cs-bottom-nav:not(:has(.cs-nav-link--next))::before {
+  display: none;
+}
+.cs-bottom-nav .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 100%;
+}
+/* Each link locked to its column — no placeholder spans needed */
+.cs-nav-link--prev { grid-column: 1; }
+.cs-nav-link--next { grid-column: 2; }
+.cs-nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: opacity 0.2s ease;
+}
+.cs-nav-link:hover { opacity: 0.6; }
+.cs-nav-link__dir {
+  font-family: var(--font-body);
+  font-size: 10px; /* Label/Eyebrow */
+  font-weight: 400;
+  line-height: 14px;
+  color: var(--light-stone); /* #9A9690 */
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.cs-nav-link__title {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 160%;
+  letter-spacing: 0.03em;
+  color: var(--light-ink); /* #1A1A1A */
+}
+.cs-nav-link--next {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Hero load animation (staggered on page load) */
+.hero-load {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroIn 0.65s ease forwards;
+}
+.hero-load-1 { animation-delay: 0.05s; }
+.hero-load-2 { animation-delay: 0.18s; }
+.hero-load-3 { animation-delay: 0.32s; }
+.hero-load-4 { animation-delay: 0.46s; }
+.hero-load-5 { animation-delay: 0.60s; }
+@keyframes heroIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   CUSTOM CURSOR (desktop / fine pointer only)
+   ============================================================ */
+@media (pointer: fine) {
+  body { cursor: none; }
+  a, button { cursor: none; }
+
+  .cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--light-ink);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s ease, height 0.25s ease,
+                opacity 0.25s ease, background 0.25s ease;
+    mix-blend-mode: multiply;
+  }
+  .cursor-dot.on-dark {
+    background: var(--dark-ink);
+    mix-blend-mode: screen;
+  }
+  .cursor-dot.is-hovering {
+    width: 32px;
+    height: 32px;
+    opacity: 0.12;
+  }
+}
+
+/* Back to top — CS pages only */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--light-stone);
+  border: 1px solid var(--light-border);
+  border-radius: 50%;
+  background: var(--light-bg);
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, color 0.2s ease;
+  z-index: 90;
+}
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.back-to-top:hover { color: var(--light-ink); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 960px) {
+  .hero .container { gap: 60px; }
+  .hero__intro { line-height: 1.35; }
+
+  /* Work cards: reduce padding */
+  .cs-item { padding: 0 40px; gap: 40px; }
+  .cs-item__number { font-size: 64px; width: 120px; }
+
+  /* About: switch to column — keep standard right padding, don't override to 0 */
+  .about .container {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .about .section-label { width: auto; }
+  .about__text { flex: none; max-width: 100%; }
+
+  /* Footer: stack main row */
+  .footer__main { flex-direction: column; align-items: flex-start; gap: 40px; }
+
+  /* CS subpage: stack section layout */
+  .cs-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .cs-section-label { width: auto; }
+  .cs-section__content { max-width: 100%; }
+
+  /* CS header: hide number on tablet */
+  .cs-header__number { display: none; }
+  .cs-header__title-row { gap: 0; }
+
+  /* CS bottom nav: hide pseudo divider */
+  .cs-bottom-nav::before { display: none; }
+}
+
+@media (max-width: 680px) {
+  .nav__links { gap: 20px; }
+  .nav__links a { font-size: 11px; letter-spacing: 0.04em; }
+
+  .hero__intro { font-size: clamp(22px, 6vw, 36px); line-height: 1.35; }
+
+  /* Work cards: number vertically centered to title (Figma: align-self stretch + flex center) */
+  .cs-item { padding: 28px 20px; gap: 16px; min-height: auto; align-items: flex-start; }
+  .cs-item__number { font-size: 48px; width: 80px; align-self: stretch; display: flex; align-items: center; justify-content: center; padding-top: 0; }
+  .cs-item__title { font-size: 18px; }
+
+  /* CS header metadata: reduce gap between Company and Timeline */
+  .cs-header__meta { gap: 24px; }
+
+  /* CS back link: less whitespace on mobile */
+  .cs-back .container { padding-top: 28px; padding-bottom: 28px; }
+
+  /* CS article: first section closer to back link on mobile */
+  .cs-body .container > *:first-child { padding-top: 28px; }
+
+  /* CS article: remove right padding on mobile — equal left/right */
+  .cs-section { padding-right: 0; }
+
+  /* CS bottom nav: stacked, prev left / next right, 20px h-padding */
+  .cs-bottom-nav { height: auto; }
+  .cs-bottom-nav .container { display: flex; flex-direction: column; gap: 12px; padding: 28px 20px; align-items: stretch; }
+  .cs-nav-link--prev { grid-column: unset; align-items: flex-start; text-align: left; }
+  .cs-nav-link--next { grid-column: unset; align-items: flex-end; text-align: right; }
+
+  /* Logos: single row, space-between, Figma mobile spec */
+  .logos { padding: 0; }
+  .logos .container { padding: 30px 20px; gap: 16px; }
+  .logos__label { font-size: 13px; line-height: 17px; letter-spacing: 0; text-transform: none; }
+  .logos__strip { flex-wrap: nowrap; gap: 0; justify-content: space-between; align-items: center; }
+  .logos__strip img { max-height: 13px; }
+  .logos__strip img.logo--featured { max-height: 20px; }
+
+  /* Footer */
+  .footer__heading-line1,
+  .footer__heading-line2 { font-size: clamp(28px, 8vw, 44px); line-height: 1.2; }
+  .footer__heading-line1 { margin-bottom: -8px; }
+}

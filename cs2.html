@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rebuilding a Fragmented Design System — Roni Margolin">
+  <title>CS 02 — Rebuilding a Fragmented Design System · Roni Margolin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="cs-page" id="top">
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav__wordmark" aria-label="Roni Margolin — home">
+        <img src="assets/images/wordmark-nav.svg" alt="ronimargolin" width="105" height="16">
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CS HEADER -->
+  <header class="cs-header">
+    <div class="container">
+      <div class="cs-header__title-row">
+        <h1 class="cs-header__title">Rebuilding a Fragmented Design System</h1>
+        <span class="cs-header__number">02</span>
+      </div>
+      <div class="cs-header__meta">
+        <div class="metadata-item">
+          <span class="metadata-item__label">Company</span>
+          <span class="metadata-item__value">Davidson Science Education Institute</span>
+        </div>
+        <div class="metadata-item">
+          <span class="metadata-item__label">Timeline</span>
+          <span class="metadata-item__value">Feb–Mar 2025</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BACK LINK -->
+  <a href="index.html#work" class="cs-back">
+    <div class="container">← Back to work</div>
+  </a>
+
+  <!-- CS BODY -->
+  <article class="cs-body">
+    <div class="container">
+
+      <div class="cs-section reveal">
+        <span class="cs-section-label">Context</span>
+        <div class="cs-section__content">
+          <p>The Davidson platform rolled out in phases. The science museum website came first, letting us meet the museum's opening deadline and establish a working process. As the project expanded into the broader platform, the team grew with it. By that point, the design library was shared across two teams of two designers each. On the surface it appeared unified. In practice, with more people working on the same library, interpretation started to diverge. As the product surface grew, these inconsistencies became more visible in both design and development.</p>
+        </div>
+      </div>
+
+      <div class="cs-section reveal">
+        <span class="cs-section-label">The Problem</span>
+        <div class="cs-section__content">
+          <p>The issue was unclear ownership and inconsistent interpretation of the design system. Different teams had adapted the system to fill gaps in their day-to-day work: component naming and usage diverged, patterns evolved independently, and teams made local optimizations that didn't hold up across the product.</p>
+          <p>This fragmentation threatened brand consistency and slowed delivery and handoff between teams. The governance work took a couple of weeks to put in place; adoption followed as teams began using the clearer structure.</p>
+        </div>
+      </div>
+
+      <div class="cs-section reveal">
+        <span class="cs-section-label">Constraints</span>
+        <div class="cs-section__content">
+          <ul>
+            <li>Multiple autonomous design teams working on separate products and product areas</li>
+            <li>Existing system already in use (no greenfield reset)</li>
+            <li>Need to preserve team autonomy while reducing divergence</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cs-section reveal">
+        <span class="cs-section-label">What I Did</span>
+        <div class="cs-section__content">
+          <p>I approached the design system as a living product.</p>
+          <p>First, I led an audit to understand where the system had diverged, why teams had adapted it, and which inconsistencies were intentional versus accidental.</p>
+          <p>I established a dedicated design system lead and defined a contribution and governance model. This meant clarifying which elements were shared and non-negotiable, and where teams kept flexibility. Adoption was framed as enablement, not enforcement.</p>
+          <div class="cs-visual--inline">
+            <img src="assets/images/cs/cs2-visual-1.png" alt="Global components overview in the design system">
+            <p class="cs-visual__caption">Global components after governance: shared, documented, and maintained centrally.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-section reveal">
+        <span class="cs-section-label">What Changed</span>
+        <div class="cs-section__content">
+          <p>Teams that had previously built their own interpretations of shared components began referencing the central system as a starting point rather than a fallback.</p>
+          <p>Duplication decreased as designers recognized that the system now reflected how they actually worked, not how someone imagined they should work. The contribution model meant that adaptations made by individual teams could feed back into the shared library rather than quietly diverging from it.</p>
+          <p>Design–engineering handoff became more predictable on the component level. Engineers knew where to look, what was canonical, and when to escalate a discrepancy rather than make a judgment call.</p>
+          <p>The system moved the debate to the right forum.</p>
+        </div>
+      </div>
+
+      <div class="cs-section reveal">
+        <span class="cs-section-label">Reflection</span>
+        <div class="cs-section__content">
+          <p>Design systems fail when ownership is unclear and contribution norms go unspoken, rarely from missing components. What the audit showed consistently: every divergence had a reason. Teams weren't ignoring the system out of carelessness. They were filling gaps it didn't cover. Starting there, with the 'why' behind each divergence, is what made the governance conversation productive rather than defensive.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- BOTTOM NAV -->
+  <nav class="cs-bottom-nav" aria-label="Case study navigation">
+    <div class="container">
+      <a href="cs1.html" class="cs-nav-link cs-nav-link--prev">
+        <span class="cs-nav-link__dir">← Previous</span>
+        <span class="cs-nav-link__title">01 Redesigning the Design–Engineering Operating Model</span>
+      </a>
+      <a href="cs3.html" class="cs-nav-link cs-nav-link--next">
+        <span class="cs-nav-link__dir">Next →</span>
+        <span class="cs-nav-link__title">03 Redesigning Discovery for a Complex, Multi-Vertical Organisation</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__main">
+          <div class="footer__left">
+            <div class="footer__heading-group">
+              <span class="footer__heading-line1">Let's work</span>
+              <span class="footer__heading-line2">together.</span>
+            </div>
+            <p class="footer__sub">Open to senior DesignOps and Program Ops roles in European tech. I'd love to hear about what you're creating.</p>
+          </div>
+          <div class="footer__links">
+            <div class="footer__link-item">
+              <span class="footer__link-label">Email</span>
+              <a href="mailto:hello@ronimargolin.com" class="footer__link">hello@ronimargolin.com</a>
+            </div>
+            <div class="footer__link-item">
+              <span class="footer__link-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/roni-margolin" class="footer__link" target="_blank" rel="noopener noreferrer">linkedin.com/in/roni-margolin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__credit">
+          <span class="footer__credit-line">Designed with <img src="assets/images/heart-outline.svg" alt="love" class="footer__heart" width="10" height="9" aria-hidden="true"></span>
+          <span class="footer__credit-wordmark">ronimargolin</span>
+        </div>
+        <span class="footer__copyright">© 2026 Roni Margolin</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd /Users/ronim/Documents/ronimargolin.com && python3 -m http.server 8765"],
+      "port": 8765
+    }
+  ]
+}

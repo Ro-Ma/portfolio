@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Redesigning the Design–Engineering Operating Model — Roni Margolin">
+  <title>CS 01 — Redesigning the Design–Engineering Operating Model · Roni Margolin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="cs-page" id="top">
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav__wordmark" aria-label="Roni Margolin — home">
+        <img src="assets/images/wordmark-nav.svg" alt="ronimargolin" width="105" height="16">
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CS HEADER -->
+  <header class="cs-header">
+    <div class="container">
+      <div class="cs-header__title-row">
+        <h1 class="cs-header__title">Redesigning the Design–Engineering Operating Model</h1>
+        <span class="cs-header__number">01</span>
+      </div>
+      <div class="cs-header__meta">
+        <div class="metadata-item">
+          <span class="metadata-item__label">Company</span>
+          <span class="metadata-item__value">Muze</span>
+        </div>
+        <div class="metadata-item">
+          <span class="metadata-item__label">Timeline</span>
+          <span class="metadata-item__value">March–April 2025</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BACK LINK -->
+  <a href="index.html#work" class="cs-back">
+    <div class="container">← Back to work</div>
+  </a>
+
+  <!-- CS BODY -->
+  <article class="cs-body">
+    <div class="container">
+
+      <div class="cs-section reveal">
+        <span class="cs-section-label">Context</span>
+        <div class="cs-section__content">
+          <p>Design quality on the team was consistently high. Implementation in dev wasn't keeping up. Two design teams of two designers each, working with a dev team of three plus a tech lead. Despite strong collaboration on both sides, work frequently lost clarity between design completion and engineering execution.</p>
+        </div>
+      </div>
+
+      <div class="cs-section reveal">
+        <span class="cs-section-label">The Problem</span>
+        <div class="cs-section__content">
+          <p>The core issue was how work transitioned between design and engineering. With no shared prioritization or readiness framework, all design work was treated as equally urgent. Clarifications surfaced late, during active development. Rework cycles increased and delivery velocity suffered.</p>
+          <div class="cs-visual--inline">
+            <img src="assets/images/cs/cs2-visual-2.png" alt="Back-and-forth comments with the dev lead during active development">
+            <p class="cs-visual__caption">Back-and-forth (in comments) with the dev lead during active development — the clarification work that the new process was designed to eliminate.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-section reveal">
+        <span class="cs-section-label">Constraints</span>
+        <div class="cs-section__content">
+          <ul>
+            <li>Cross-functional teams working in parallel</li>
+            <li>Ongoing delivery commitments (no pause to "fix process")</li>
+            <li>High trust culture: changes needed buy-in, not enforcement</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cs-section reveal">
+        <span class="cs-section-label">What I Did</span>
+        <div class="cs-section__content">
+          <p>I redesigned how work moved between design and engineering. Instead of a single handoff moment, I introduced a phased delivery model that made expectations explicit before development started.</p>
+          <p>I defined clear readiness checkpoints (scope clarity, open questions, dependencies) and introduced lightweight structured documentation for each phase. Handoff conversations moved earlier, from reactive clarification to proactive risk surfacing.</p>
+          <p>We framed it as a shared system process.</p>
+        </div>
+      </div>
+
+      <div class="cs-visual reveal">
+        <img src="assets/images/cs/cs2-visual-3.png" alt="DS and dev guidelines headers — shared documentation aligned to design specs">
+        <p class="cs-visual__caption">Developer guidelines for header components, aligned to design specs.</p>
+      </div>
+
+      <div class="cs-section reveal">
+        <span class="cs-section-label">What Changed</span>
+        <div class="cs-section__content">
+          <p>The most visible shift was in the nature of the conversations.</p>
+          <p>Before the new model, questions from engineering tended to surface mid-sprint, often about intent, scope, or whether a design was final. After introducing the phased delivery model and joint walkthroughs, those questions moved earlier, into a space where they could actually be addressed without disrupting active development.</p>
+          <p>Over time, as I built a clearer picture of how the dev team worked best — their preferred level of detail, where they needed explicit decisions versus flexibility — the handoff process became faster and left fewer open ends. Designs landed in a state that engineers could actually work from, rather than interpret.</p>
+          <p>The sprint dynamic stabilized. Problems got resolved before they could block anything.</p>
+        </div>
+      </div>
+
+      <div class="cs-section reveal">
+        <span class="cs-section-label">Reflection</span>
+        <div class="cs-section__content">
+          <p>What this case reinforced: before designing any collaborative workflow, understand how both sides already work. Existing practices, how each team shares information, what they've tried before — that conversation shapes what actually gets adopted. The phased model we landed on was built around how this specific team operated, not applied on top of them.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- BOTTOM NAV -->
+  <nav class="cs-bottom-nav" aria-label="Case study navigation">
+    <div class="container">
+      <a href="cs2.html" class="cs-nav-link cs-nav-link--next">
+        <span class="cs-nav-link__dir">Next →</span>
+        <span class="cs-nav-link__title">02 Rebuilding a Fragmented Design System</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__main">
+          <div class="footer__left">
+            <div class="footer__heading-group">
+              <span class="footer__heading-line1">Let's work</span>
+              <span class="footer__heading-line2">together.</span>
+            </div>
+            <p class="footer__sub">Open to senior DesignOps and Program Ops roles in European tech. I'd love to hear about what you're creating.</p>
+          </div>
+          <div class="footer__links">
+            <div class="footer__link-item">
+              <span class="footer__link-label">Email</span>
+              <a href="mailto:hello@ronimargolin.com" class="footer__link">hello@ronimargolin.com</a>
+            </div>
+            <div class="footer__link-item">
+              <span class="footer__link-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/roni-margolin" class="footer__link" target="_blank" rel="noopener noreferrer">linkedin.com/in/roni-margolin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__credit">
+          <span class="footer__credit-line">Designed with <img src="assets/images/heart-outline.svg" alt="love" class="footer__heart" width="10" height="9" aria-hidden="true"></span>
+          <span class="footer__credit-wordmark">ronimargolin</span>
+        </div>
+        <span class="footer__copyright">© 2026 Roni Margolin</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
