@@ -564,7 +564,7 @@ ul { list-style: none; }
 .cs-header__meta {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   gap: 80px;
   flex-wrap: wrap;
 }
@@ -596,6 +596,7 @@ ul { list-style: none; }
   color: var(--light-stone); /* #9A9690 */
   flex-shrink: 0;
   text-align: center;
+  order: -1;
 }
 
 .metadata-item {
