@@ -325,6 +325,11 @@ ul { list-style: none; }
   max-width: 680px;
   flex: 0 0 680px;
 }
+
+.about__photo {
+  width: 140px;
+  height: 140px;
+}
 .about__text p {
   font-family: var(--font-body);
   font-size: 18px;
@@ -955,10 +960,14 @@ p.cs-visual__caption {
 
   .hero__intro { font-size: clamp(22px, 6vw, 36px); line-height: 1.35; }
 
-  /* Work cards: number vertically centered to title (Figma: align-self stretch + flex center) */
-  .cs-item { padding: 28px 20px; gap: 16px; min-height: auto; align-items: flex-start; }
-  .cs-item__number { font-size: 48px; width: 80px; align-self: stretch; display: flex; align-items: center; justify-content: center; padding-top: 0; }
-  .cs-item__title { font-size: 18px; }
+  /* Work cards: grid layout — number centered to title row only */
+  .cs-item { display: grid; grid-template-columns: 72px 1fr; column-gap: 16px; padding: 28px 20px; min-height: auto; }
+  .cs-item__content { display: contents; }
+  .cs-item__meta { display: contents; }
+  .cs-item__number { grid-column: 1; grid-row: 1; font-size: 48px; width: auto; align-self: center; display: flex; align-items: center; justify-content: center; padding-top: 0; }
+  .cs-item__title { grid-column: 2; grid-row: 1; font-size: 18px; align-self: center; }
+  .cs-item__subtitle { grid-column: 2; grid-row: 2; }
+  .cs-item__tags { grid-column: 2; grid-row: 3; margin-top: 12px; }
 
   /* CS header metadata: reduce gap between Company and Timeline */
   .cs-header__meta { gap: 24px; }
