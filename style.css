@@ -978,7 +978,7 @@ p.cs-visual__caption {
   .cs-item__tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
   /* CS header metadata: stacked column on mobile (Company → Timeline) */
-  .cs-header__meta { flex-direction: column; gap: 16px; }
+  .cs-header__meta { flex-direction: column; gap: 16px; align-items: flex-start; }
 
   /* CS back link: less whitespace on mobile */
   .cs-back .container { padding-top: 28px; padding-bottom: 28px; }
