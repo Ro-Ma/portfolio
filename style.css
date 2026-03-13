@@ -580,11 +580,13 @@ ul { list-style: none; }
 .cs-header__title {
   font-family: var(--font-body);
   font-size: 72px;
-  font-weight: 300;
+  font-weight: 200;
   line-height: 117%;
   color: var(--light-ink); /* #1A1A1A */
   flex: 1;
   max-width: 890px;
+  -webkit-font-smoothing: antialiased;
+  font-optical-sizing: none;
 }
 .cs-header__number {
   font-family: var(--font-body);
