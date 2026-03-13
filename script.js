@@ -44,7 +44,13 @@ if (window.matchMedia('(pointer: fine)').matches) {
   let mx = -100, my = -100, cx = -100, cy = -100;
   let raf;
 
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  const darkSelectors = '.hero, .about, .footer';
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    const el = document.elementFromPoint(mx, my);
+    if (el && el.closest(darkSelectors)) dot.classList.add('on-dark');
+    else dot.classList.remove('on-dark');
+  });
 
   function tick() {
     cx += (mx - cx) * 0.18;
@@ -61,15 +67,6 @@ if (window.matchMedia('(pointer: fine)').matches) {
     el.addEventListener('mouseleave', () => dot.classList.remove('is-hovering'));
   });
 
-  /* Swap blend mode on dark sections */
-  const darkSections = document.querySelectorAll('.hero, .about, .footer');
-  const sectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) dot.classList.add('on-dark');
-      else dot.classList.remove('on-dark');
-    });
-  }, { threshold: 0.5 });
-  darkSections.forEach(s => sectionObserver.observe(s));
 }
 
 /* === BACK TO TOP (CS pages) === */
