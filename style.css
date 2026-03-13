@@ -952,9 +952,9 @@ p.cs-visual__caption {
   .cs-section-label { width: auto; }
   .cs-section__content { max-width: 100%; }
 
-  /* CS header: hide number on tablet */
-  .cs-header__number { display: none; }
-  .cs-header__title-row { gap: 0; }
+  /* CS header: number above title on mobile (Figma spec) */
+  .cs-header__title-row { flex-direction: column; gap: 10px; }
+  .cs-header__number { display: flex; font-size: 48px; font-weight: 100; line-height: 140%; }
 
   /* CS bottom nav: hide pseudo divider */
   .cs-bottom-nav::before { display: none; }
@@ -976,8 +976,8 @@ p.cs-visual__caption {
   .cs-item__subtitle { margin: 0; }
   .cs-item__tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
-  /* CS header metadata: reduce gap between Company and Timeline */
-  .cs-header__meta { gap: 24px; }
+  /* CS header metadata: stacked column on mobile (Company → Timeline) */
+  .cs-header__meta { flex-direction: column; gap: 16px; }
 
   /* CS back link: less whitespace on mobile */
   .cs-back .container { padding-top: 28px; padding-bottom: 28px; }
